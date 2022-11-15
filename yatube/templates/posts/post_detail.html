@@ -20,10 +20,10 @@
         {% endif %}
       </li>
       <li class="list-group-item">
-        Автор: {% if post.author.get_full_name %}{{ post.author.get_full_name }}{% else %}{{ post.author }}{% endif %}
+        {% include 'posts/includes/author.html' %}
       </li>
       <li class="list-group-item">
-        Всего постов автора: {{ posts_count }}
+        Всего постов автора: {{ post.author.posts.count }}
       </li>
       <li class="list-group-item">
         <a href="{% url 'posts:profile' post.author %}">все посты пользователя</a>
